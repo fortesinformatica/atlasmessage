@@ -2,11 +2,11 @@ module.exports = function(atendentes) {
 
 	return {
 		join: function(atendente) {
-			atendentes.add(atendente, this);
+			atendentes.add(atendente, this.id);
 		},
 
 		notificarDestinatario: function(data) {
-			atendentes.notificar(data.organizacao_id, data.destinatario_id);
-		} 
+			atendentes.notificar(this, data.organizacao_id, data.destinatario_id);
+		}
 	}
 };
