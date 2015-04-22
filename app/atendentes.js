@@ -1,9 +1,7 @@
 module.exports = function() {
 	var redisClient = require('redis').createClient();
 
-	redisClient.on("error", function (err) {
-    console.log("[REDIS] Error " + err);
-  });
+	redisClient.on("error", function (err) {console.log("[REDIS] Error " + err);});
 
 	return {
 		add: function(atendente, socket_id) {

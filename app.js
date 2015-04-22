@@ -2,7 +2,9 @@ var app = require('http').createServer(),
     io = require('socket.io')(app);
 
 app.listen(9997, function() {
-	console.log("port :9997");
+	console.log("Server configured for: " + (global.process.env.NODE_ENV || 'development') + " environment.");
+	console.log("Server running on :9997");
+  console.log(new Date)
 });
 
 var atendentes = require(__dirname + '/app/atendentes')();
