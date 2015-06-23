@@ -14,3 +14,9 @@ io.on('connection', function (socket) {
   socket.on('join', servidor.join);
   socket.on('notificardestinatario', servidor.notificarDestinatario);
 });
+
+io.of('/notificacoesdelogin').on('connection', function(socket) {
+  socket.on('notificarlogin', function(userId) {
+    socket.broadcast.emit('novologin' + userId);
+  });
+});
